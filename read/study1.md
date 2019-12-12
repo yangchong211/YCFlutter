@@ -7,6 +7,9 @@
 - 09.Element与BuildContext关系
 - 10.Flutter UI框架能不做成响应式吗
 - 11.UI系统概念性知识点思考
+- 12.context是什么，一个widget有几个
+- 13.常见组件有哪些，如何进行分类
+- 14.GlobalKey是什么，作用是啥
 
 
 
@@ -29,18 +32,31 @@
 
 
 ### 03.StatefulWidget和StatelessWidget
-- StatefulWidget 有状态widget
-- StatelessWidget 无状态widget
+- 两者区别
+    - StatefulWidget 有状态widget
+    - StatelessWidget 无状态widget，怎么理解呢？
 - 使用场景：
     - 比如list条目页面，使用StatefulWidget，项目中HomePage视图
     - 比如list条目页面的分割线，就可以使用StatelessWidget，项目中EndLine，NoData视图
-
-
+- Widget是什么
+    - 描述一个UI的配置元素，什么意思呢？就是可以把它简单理解为一个组件或者控件……
+- 两者都是继承Widget
+    - 是抽象类
 
 
 
 
 ### 04.State作用是啥，做什么用的
+- state是什么
+    - 一个statefulWidget有一个state
+- setState作用是啥
+    - 手动调用其setState()会重新刷新视图，也就是重新build构建widget树，作用是更新UI
+- State有那些属性
+    - widget和context
+- state生命周期
+    - 有多个生命周期方法，相当于activity中的生命周期，这个很重要
+- 如何在Widget树中获取State对象
+    - 可以通过context获取，有个ancestorStateOfType方法
 
 
 
@@ -67,6 +83,40 @@
 完全可以将UI框架设计成Android风格或iOS风格，但这些事Google不会再去做，
 我们也没必要再去搞这一套，这是因为响应式的思想本身是很棒的，之所以提出这个问题，
 是因为笔者认为做与不做是一回事，但知道能不能做是另一回事，这能反映出我们对知识的理解程度。
+
+
+
+### 12.context是什么，一个widget有几个
+- context是什么
+    - 是BuildContext类的一个实例
+- 一个widget有几个context
+    - 每一个widget都会对应一个context对象
+    - 每个widget是widget树上一个节点，
+- context的作用是干啥的
+
+
+### 13.常见组件有哪些，如何进行分类
+- 基础组件
+    - 比如文本，图片，row，Container等控件
+- Material组件
+    - 比如appBar，Scaffold，MaterialApp等等
+- Cupertino组件
+
+
+
+### 14.GlobalKey是什么，作用是啥
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
