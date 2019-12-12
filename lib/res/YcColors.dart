@@ -52,4 +52,10 @@ class YcColors {
   static const Color line = Color(0xFFEEEEEE);
   static const Color order_line = Color(0xFFDDDDDD);
   static const Color text_red = Color(0xFFFF4759);
+
+
+  static const loginColor = [
+    Colors.amberAccent,
+    Colors.deepPurpleAccent,
+  ];
 }

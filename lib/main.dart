@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 import 'package:flutter/material.dart';
-import 'package:ycflutter/main/MainDart.dart';
+import 'splash/Splash.dart';
 
 /*
  * <pre>
@@ -29,6 +29,8 @@ import 'package:ycflutter/main/MainDart.dart';
 //void main() => runApp(MainDart());
 
 void main(){
-  runApp(new MainDart());
+  runApp(new Splash());
 }
+
+
 

@@ -1,5 +1,7 @@
 
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:ycflutter/res/YcColors.dart';
 import 'package:ycflutter/test/LifecycleAppPage.dart';
@@ -21,6 +23,7 @@ class TestPage extends StatefulWidget{
 class TestPageState extends State<TestPage>{
   @override
   Widget build(BuildContext context) {
+    test();
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('测试的案例代码'),
@@ -101,6 +104,51 @@ class TestPageState extends State<TestPage>{
         ],
       ),
     );
+  }
+
+
+
+  void test(){
+    Future.delayed(new Duration(seconds: 2),(){
+      return "hi world!";
+    }).then((data){
+      print(data);
+    });
+
+    Future.delayed(new Duration(seconds: 2),(){
+      //return "hi world!";
+      throw AssertionError("Error");
+    }).then((data){
+      //执行成功会走到这里
+      print("success");
+    }).catchError((e){
+      //执行失败会走到这里
+      print(e);
+    });
+
+    Future.delayed(new Duration(seconds: 2), () {
+      //return "hi world!";
+      throw AssertionError("Error");
+    }).then((data) {
+      print("success");
+    },onError:(e) {
+      print(e);
+    });
+
+    Future.wait([
+      // 2秒后返回结果
+      Future.delayed(new Duration(seconds: 2), () {
+        return "hello";
+      }),
+      // 4秒后返回结果
+      Future.delayed(new Duration(seconds: 4), () {
+        return " world";
+      })
+    ]).then((results){
+      print(results[0]+results[1]);
+    }).catchError((e){
+      print(e);
+    });
   }
 
 }

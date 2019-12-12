@@ -58,4 +58,29 @@ class UserUtils {
     bool b = sp.getBool(login);
     return true == b;
   }
+
+
+  static Future _get(String key) async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    print(key);
+    var value = sp.get(key);
+    print(value);
+    return value;
+  }
+
+  static Future _set(String key, Object value) async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    if (value is int) {
+      sp.setInt(key, value);
+    } else if (value is String) {
+      sp.setString(key, value);
+    } else if (value is bool) {
+      sp.setBool(key, value);
+    } else if (value is double) {
+      sp.setDouble(key, value);
+    } else if (value is List<String>) {
+      sp.setStringList(key, value);
+    }
+  }
+
 }

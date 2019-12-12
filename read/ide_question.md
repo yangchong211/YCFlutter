@@ -2,6 +2,7 @@
 - 01.Waiting for another flutter command to release the startup lock…
 - 02.bash: brew: command not found
 - 03.Mac安装配置Flutter与踩坑
+- 04.studio 显示"no devices"
 
 
 
@@ -34,6 +35,10 @@
 ### 03.Mac安装配置Flutter与踩坑
 - https://www.jianshu.com/p/5eb49e7f67e8
 
+
+### 04.studio 显示"no devices"
+- 使用androidstudio打开flutter工程，在真机已经连接USB的情况下，依然显示"no devices".
+- 解决方法，在flutter sdk目录输入命令：flutter config --android-sdk 自己的android sdk路径
 
 
 

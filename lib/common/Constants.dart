@@ -17,7 +17,16 @@ limitations under the License.
 
 class Constants {
 
+  /**
+   * 玩Android的一些常量
+   * android
+   */
   static final String complete = "COMPLETE";
   static final String busSetting = "bus_setting";
+
+/**
+ * 干活集中营的一些常量
+ * gank
+ */
 
 }

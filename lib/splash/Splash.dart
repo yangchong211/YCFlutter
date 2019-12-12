@@ -16,6 +16,9 @@ limitations under the License.
 
 
 import 'package:flutter/material.dart';
+import 'package:ycflutter/android/AndroidMain.dart';
+import 'package:ycflutter/gank/GanKMain.dart';
+import 'package:ycflutter/res/YcColors.dart';
 
 
 /*
@@ -36,8 +39,46 @@ class Splash extends StatefulWidget{
 }
 
 class SplashPageState extends State<Splash> {
+
+  final navigatorKey = GlobalKey<NavigatorState>();
+
   @override
   Widget build(BuildContext context) {
-    return null;
+    return new MaterialApp(
+      navigatorKey: navigatorKey,
+      //设置主题
+      theme: ThemeData(
+          accentColor: Colors.black,
+          textSelectionColor: YcColors.colorWhite,
+          primaryColor: YcColors.colorPrimary),
+      home : new Scaffold(
+        body: new ListView(
+          padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+          children: <Widget>[
+            new ListTile(
+                title: const Text('打开玩Android客户端'),
+                onTap: () {
+                  /*Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
+                    return new AndroidMain();
+                  }));*/
+                  navigatorKey.currentState.push(new MaterialPageRoute(builder: (context) {
+                    return new AndroidMain();
+                  }));
+                }),
+            new ListTile(
+                title: const Text('打开干货集中营客户端'),
+                onTap: () {
+                  /*Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
+                    return new GankMain();
+                  }));*/
+                  navigatorKey.currentState.push(new MaterialPageRoute(builder: (context) {
+                    return new GankMain();
+                  }));
+                }),
+          ],
+        ),
+      )
+    );
   }
+
 }
