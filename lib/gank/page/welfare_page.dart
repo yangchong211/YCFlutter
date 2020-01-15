@@ -25,7 +25,7 @@ class WelfarePage extends StatefulWidget{
 class WelfarePageState extends State<WelfarePage> with AutomaticKeepAliveClientMixin {
 
   bool _isLoading = true;
-  List _gankItems = [];
+  List _items = [];
   int _page = 1;
   RefreshController _refreshController;
   bool isOneColumn = false;
@@ -80,10 +80,10 @@ class WelfarePageState extends State<WelfarePage> with AutomaticKeepAliveClientM
                       childAspectRatio: 2 / (isOneColumn ? 2 : 3),
                       crossAxisSpacing: 10.0,
                     ),
-                    itemCount: _gankItems?.length ?? 0,
+                    itemCount: _items?.length ?? 0,
                     padding: EdgeInsets.all(10),
                     itemBuilder: (BuildContext context, int index) {
-                      var gankItem = _gankItems[index];
+                      var gankItem = _items[index];
                       return GestureDetector(
                         onTap: () {
                           Navigator.of(context)
@@ -152,7 +152,7 @@ class WelfarePageState extends State<WelfarePage> with AutomaticKeepAliveClientM
     var gankItems = await _getCategoryData();
     _refreshController.refreshCompleted();
     setState(() {
-      _gankItems = gankItems;
+      _items = gankItems;
     });
   }
 
@@ -161,14 +161,14 @@ class WelfarePageState extends State<WelfarePage> with AutomaticKeepAliveClientM
     var gankItems = await _getCategoryData();
     _refreshController.loadComplete();
     setState(() {
-      _gankItems.addAll(gankItems);
+      _items.addAll(gankItems);
     });
   }
 
   void initWelfareData() async {
     var gankItems = await _getCategoryData();
     setState(() {
-      _gankItems.addAll(gankItems);
+      _items.addAll(gankItems);
       _isLoading = false;
     });
   }
