@@ -24,8 +24,7 @@ class GankItem {
   void setField(Map<String, dynamic> json) {
     this.createdAt = json['createdAt'];
     this.desc = json['desc'] ?? '';
-    this.images =
-        json['images']?.map<String>((image) => image as String)?.toList() ?? [];
+    this.images = json['images']?.map<String>((image) => image as String)?.toList() ?? [];
     this.publishedAt = json['publishedAt'];
     this.source = json['source'];
     this.type = json['type'];
