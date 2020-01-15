@@ -41,10 +41,14 @@ class ArticleListItemState extends State<ArticleListItem>{
               bottom:
               BorderSide(width: 0.0, color: Theme.of(context).dividerColor),
             )),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: _buildArticleListItem(context),
-        ),
+//        child: Row(
+//          crossAxisAlignment: CrossAxisAlignment.stretch,
+//          children: _buildArticleListItem(context),
+//        ),
+      child: new Text(
+              widget.articleItem['content']?.isEmpty ?? true
+              ? widget.articleItem['summaryInfo']
+                  : widget.articleItem['content'])
       ),
     );
   }
@@ -80,25 +84,25 @@ class ArticleListItemState extends State<ArticleListItem>{
       ),
     ];
     ///添加右侧缩略图显示
-    if (widget.articleItem['screenshot'] != null && widget.articleItem['screenshot'].isNotEmpty) {
-      var imageUrl = widget.articleItem['screenshot'];
-      contentWidgets.add(GestureDetector(
-          onTap: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-              return GalleryPage([imageUrl], "");
-            }));
-          },
-          child: Container(
-            margin: EdgeInsets.only(right: 16, top: 20, bottom: 20),
-            width: 80,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: CachedNetworkImageProvider(imageUrl),
-              ),
-            ),
-          )));
-    }
+//    if (widget.articleItem['screenshot'] != null && widget.articleItem['screenshot'].isNotEmpty) {
+//      var imageUrl = widget.articleItem['screenshot'];
+//      contentWidgets.add(GestureDetector(
+//          onTap: () {
+//            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+//              return GalleryPage([imageUrl], "");
+//            }));
+//          },
+//          child: Container(
+//            margin: EdgeInsets.only(right: 16, top: 20, bottom: 20),
+//            width: 80,
+//            decoration: BoxDecoration(
+//              image: DecorationImage(
+//                fit: BoxFit.cover,
+//                image: CachedNetworkImageProvider(imageUrl),
+//              ),
+//            ),
+//          )));
+//    }
     return contentWidgets;
   }
 }
