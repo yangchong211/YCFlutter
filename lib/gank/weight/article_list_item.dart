@@ -51,21 +51,32 @@ class ArticleListItemState extends State<ArticleListItem>{
 
   List<Widget> _buildArticleListItem(BuildContext context) {
     var contentWidgets = <Widget>[
-      new Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          new Padding(
-            padding: const EdgeInsets.fromLTRB(16, 10, 16, 10),
-            child: new Text(
-              widget.articleItem['content']?.isEmpty ?? true
-                  ? widget.articleItem['summaryInfo']
-                  : widget.articleItem['content'],
-              style: TextStyles.textDark14,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
+      //会抛出错误：Another exception was thrown: BoxConstraints forces an infinite height.
+      //原因：在Row或者Column组件里使用listview等容器类组件没有指定宽高。
+      //解决：用Expand或者Flexible包裹一下这种无限制的容器即可。
+      new Expanded(
+        child: new Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            new Padding(
+              padding: const EdgeInsets.fromLTRB(16, 10, 16, 10),
+              child: new Text(
+                widget.articleItem['content']?.isEmpty ?? true
+                    ? widget.articleItem['summaryInfo']
+                    : widget.articleItem['content'],
+                style: TextStyles.textDark14,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
-          )
-        ],
+            new Container(
+              margin: const EdgeInsets.fromLTRB(16, 0, 16, 10),
+              child: new Row(
+
+              ),
+            ),
+          ],
+        ),
       ),
     ];
     ///添加右侧缩略图显示
