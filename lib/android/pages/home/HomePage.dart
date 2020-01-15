@@ -58,6 +58,8 @@ class HomeState extends State<HomePage> {
   bool showToTopBtn = false;
   //轮播图
   BannerView bannerView;
+  //上次点击时间
+  DateTime _lastPressedAt;
 
   //这个方法必须写
   @override
@@ -70,7 +72,14 @@ class HomeState extends State<HomePage> {
         child: new CircularProgressIndicator(),
       );
     }else{
-      return new Scaffold(
+      return getWillPopScope();
+    }
+  }
+
+  ///WillPopScope，做返回键的逻辑处理
+  WillPopScope getWillPopScope(){
+    return new WillPopScope(
+      child: new Scaffold(
         body: getBody(),
         floatingActionButton: !showToTopBtn ? null : FloatingActionButton(
           onPressed: (){
@@ -80,9 +89,19 @@ class HomeState extends State<HomePage> {
           child: Icon(Icons.vertical_align_top),
           mini:true,
         ), // This t
-      );
-    }
+      ),
+      onWillPop: () async {
+        if (_lastPressedAt == null ||
+            DateTime.now().difference(_lastPressedAt) > Duration(seconds: 1)) {
+          //两次点击间隔超过1秒则重新计时
+          _lastPressedAt = DateTime.now();
+          return false;
+        }
+        return true;
+      },
+    );
   }
+
 
   //构造方法
   HomeState(){

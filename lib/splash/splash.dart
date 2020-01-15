@@ -16,8 +16,8 @@ limitations under the License.
 
 
 import 'package:flutter/material.dart';
-import 'package:ycflutter/android/AndroidMain.dart';
-import 'package:ycflutter/gank/GanKMain.dart';
+import 'package:ycflutter/android/main/AndroidMain.dart';
+import 'package:ycflutter/gank/page/gank_main.dart';
 import 'package:ycflutter/res/YcColors.dart';
 
 
@@ -50,7 +50,7 @@ class SplashPageState extends State<Splash> {
       theme: ThemeData(
           accentColor: Colors.black,
           textSelectionColor: YcColors.colorWhite,
-          primaryColor: YcColors.colorPrimary),
+          primaryColor: YcColors.colorWhite),
       home : new Scaffold(
         body: new ListView(
           padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),

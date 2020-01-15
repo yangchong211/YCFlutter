@@ -33,4 +33,7 @@ class YcString{
   static String thinkTitle = "记事本";
   static String updateTitle = "版本更新";
   static String aboutTitle = "画廊";
+  static const String WELFARE = '福利';
+  static const String UNKNOWN_ERROR = '未知错误';
+  static const String NETWORK_CONNECT_ERROR = '网络连接错误';
 }

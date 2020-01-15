@@ -1,7 +1,10 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:ycflutter/gank/weight/SizableDrawer.dart';
+import 'package:ycflutter/gank/page/gank_about_page.dart';
+import 'package:ycflutter/gank/page/welfare_page.dart';
+import 'package:ycflutter/gank/weight/sizable_drawer.dart';
+import 'package:ycflutter/utils/AppNavigator.dart';
 
 class GankDrawer extends StatefulWidget{
   @override
@@ -58,6 +61,7 @@ class _GankDrawerState extends State<GankDrawer>{
               title: new Text("消息中心"),
               trailing: new Icon(Icons.verified_user),
               onTap: (){
+
               }
           ),
           new Divider(),
@@ -69,9 +73,10 @@ class _GankDrawerState extends State<GankDrawer>{
           ),
           new Divider(),
           new ListTile(
-              title: new Text("分组管理"),
+              title: new Text("妹子图"),
               trailing: new Icon(Icons.group_work),
               onTap: (){
+                _gotoActivity(context, WelfarePage());
               }
           ),
           new Divider(),
@@ -79,7 +84,7 @@ class _GankDrawerState extends State<GankDrawer>{
             title: new Text("关于项目"),
             trailing: new Icon(Icons.apps),
             onTap: (){
-
+              _gotoActivity(context, GankAboutPage());
             },
           ),
           new Divider(),
@@ -87,7 +92,7 @@ class _GankDrawerState extends State<GankDrawer>{
               title: new Text("设置中心"),
               trailing: new Icon(Icons.settings),
               onTap: (){
-
+                _gotoActivity(context, WelfarePage());
               }
           ),
           new Divider(),
@@ -95,8 +100,15 @@ class _GankDrawerState extends State<GankDrawer>{
       ),
     );
   }
-
-
+  
+  ///跳转到某个具体的页面
+  void _gotoActivity(BuildContext context, Widget activity) {
+    Navigator.of(context).pop();
+    AppNavigator.push(context, activity);
+//    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+//      return activity;
+//    }));
+  }
 
 }
 

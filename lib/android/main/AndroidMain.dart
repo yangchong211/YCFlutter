@@ -24,6 +24,7 @@ import 'package:ycflutter/android/pages/home/HomePage.dart';
 import 'package:ycflutter/android/pages/me/MePage.dart';
 import 'package:ycflutter/android/pages/search/SearchPage.dart';
 import 'package:ycflutter/android/pages/todo/TodoPage.dart';
+import 'package:ycflutter/gank/page/gank_main.dart';
 import 'package:ycflutter/res/YcColors.dart';
 import 'package:ycflutter/utils/EventBus.dart';
 import 'package:ycflutter/utils/LogUtils.dart';
@@ -117,14 +118,13 @@ class MainDartState extends State<AndroidMain> with TickerProviderStateMixin {
         mainTitles[positionIndex],
         style: new TextStyle(color: Colors.white , fontSize: 18 , fontWeight: FontWeight.bold),
       ),
-
       //这个相当于actionBar上的menu
       actions: <Widget>[
         new IconButton(
             icon: new Icon(Icons.account_balance),
             onPressed: () {
               navigatorKey.currentState.push(new MaterialPageRoute(builder: (context) {
-                return null;
+                return new GankMain();
               }));
             }),
         new IconButton(

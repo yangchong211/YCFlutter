@@ -24,9 +24,11 @@ class Constants {
   static final String complete = "COMPLETE";
   static final String busSetting = "bus_setting";
 
-/**
- * 干活集中营的一些常量
- * gank
- */
+  /**
+   * 干活集中营的一些常量
+   * gank
+   */
+  static final String updateGirl = "update_girl";
+
 
 }

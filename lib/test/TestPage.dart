@@ -17,19 +17,18 @@ class TestPage extends StatefulWidget{
   State<StatefulWidget> createState() {
     return new TestPageState();
   }
-
 }
 
 class TestPageState extends State<TestPage>{
   @override
   Widget build(BuildContext context) {
-    test();
+    //test();
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('测试的案例代码'),
       ),
       body: new ListView(
-        padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+        padding: new EdgeInsets.fromLTRB(100, 0, 10, 0),
         children: <Widget>[
           new ListTile(
               title: const Text('list页面'),
