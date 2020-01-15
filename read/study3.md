@@ -33,7 +33,8 @@
 - 分割线
     - Divider               分割线
 - 其他控件
-    - ClipRRect     圆角矩形裁切
+    - ClipRRect             圆角矩形裁切
+    - BoxDecoration         多种绘制盒子，有边框、主体、阴影组成。可能是圆形或者长方形
 
 
 

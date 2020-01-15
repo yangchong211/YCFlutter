@@ -39,7 +39,7 @@ class _BottomTabsState extends State<BottomTabs> {
 
       ///文章
       BottomNavigationBarItem(
-        icon: Icon(IconFont(0xe64f)),
+        icon: Icon(Icons.supervised_user_circle),
         title:Text(GankLocalizations.of(context).currentLocalized.article),
       ),
     ];

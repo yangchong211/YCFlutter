@@ -30,7 +30,6 @@ class WelfarePageState extends State<WelfarePage> with AutomaticKeepAliveClientM
   RefreshController _refreshController;
   bool isOneColumn = false;
 
-  ///
   @override
   bool get wantKeepAlive => true;
 

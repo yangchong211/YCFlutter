@@ -33,6 +33,15 @@ class GankApi{
     return response.data['results'];
   }
 
+  ///获取掘金文章
+  static Future getJueJinFlutterArticles(int page) async {
+    String url =
+        'https://timeline-merger-ms.juejin.im/v1/get_tag_entry?src=web&tagId=5a96291f6fb9a0535b535438'
+        '&page=$page&pageSize=${10}'
+        '&sort=createdAt';
+    HttpResponse response = await HttpManager.instance.request(url);
+    return response.data;
+  }
 }
 
 

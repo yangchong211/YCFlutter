@@ -5,6 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:ycflutter/common/Constants.dart';
 import 'package:ycflutter/gank/api/gank_api.dart';
 import 'package:ycflutter/gank/local/gank_localizations_delegate.dart';
+import 'package:ycflutter/gank/page/article_page.dart';
 import 'package:ycflutter/gank/page/gank_about_page.dart';
 import 'package:ycflutter/gank/page/welfare_page.dart';
 import 'package:ycflutter/gank/weight/gank_drawer.dart';
@@ -128,7 +129,7 @@ class GankState extends State<GankMain> {
             GankAboutPage(),
             GankAboutPage(),
             WelfarePage(),
-            GankAboutPage()
+            ArticlePage()
           ],
         ),
       ],
