@@ -22,7 +22,6 @@ dependencies:
   json_model: "^0.0.2"
   pull_to_refresh: ^1.4.0
   dio: ^2.1.6
-  photo_view: ^0.4.0
   cached_network_image: ^0.8.0
 
 

@@ -32,6 +32,8 @@
     - CircularProgressIndicator         圆形进度条
 - 分割线
     - Divider               分割线
+- 其他控件
+    - ClipRRect     圆角矩形裁切
 
 
 
@@ -50,6 +52,8 @@
 - 层叠布局，类似Android中桢布局
     - Stack         允许子组件堆叠
     - Positioned        
+
+
 
 
 

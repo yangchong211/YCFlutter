@@ -87,11 +87,8 @@ class WelfarePageState extends State<WelfarePage> with AutomaticKeepAliveClientM
                       var gankItem = _items[index];
                       return GestureDetector(
                         onTap: () {
-                          Navigator.of(context)
-                              .push(MaterialPageRoute(builder: (context) {
-                            return GalleryPage(
-                                [gankItem.url.replaceFirst("large", "mw690")],
-                                gankItem.desc);
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                            return GalleryPage([gankItem.url.replaceFirst("large", "mw690")], gankItem.desc);
                           }));
                         },
                         child: Padding(
