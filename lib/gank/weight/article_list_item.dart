@@ -45,11 +45,11 @@ class ArticleListItemState extends State<ArticleListItem>{
 //          crossAxisAlignment: CrossAxisAlignment.stretch,
 //          children: _buildArticleListItem(context),
 //        ),
-      child: new Text(
-              widget.articleItem['content']?.isEmpty ?? true
-              ? widget.articleItem['summaryInfo']
-                  : widget.articleItem['content'])
-      ),
+        child: new Text(
+                widget.articleItem['content']?.isEmpty ?? true
+                ? widget.articleItem['summaryInfo']
+                    : widget.articleItem['content'])
+        ),
     );
   }
 
