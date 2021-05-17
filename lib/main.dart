@@ -14,8 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 import 'package:flutter/material.dart';
-import 'package:ycflutter/android/main/AndroidMain.dart';
-import 'splash/splash.dart';
+import 'package:ycflutter/page/app_main_page.dart';
 
 /*
  * <pre>
@@ -30,7 +29,8 @@ import 'splash/splash.dart';
 //void main() => runApp(MainDart());
 
 void main(){
-  runApp(new AndroidMain());
+  //应用入口
+  runApp(new AppMainPage());
 }
 
 

@@ -29,8 +29,10 @@ import 'package:ycflutter/res/YcColors.dart';
 import 'package:ycflutter/utils/EventBus.dart';
 import 'package:ycflutter/utils/LogUtils.dart';
 
-
-class AndroidMain extends  StatefulWidget{
+//有状态的组件（Stateful widget）
+//无状态的组件（Stateless widget）
+//Stateful widget可以拥有状态，这些状态在widget生命周期中是可以变的，而Stateless widget是不可变的
+class AppMainPage extends  StatefulWidget{
   @override
   State<StatefulWidget> createState() {
     MainDartState mainDartState = new MainDartState();
@@ -38,18 +40,24 @@ class AndroidMain extends  StatefulWidget{
   }
 }
 
-class MainDartState extends State<AndroidMain> with TickerProviderStateMixin {
+class MainDartState extends State<AppMainPage> with TickerProviderStateMixin {
 
+  int _counter = 0;
   dynamic d = 1;
   //变量
   //默认索引
   int positionIndex = 0;
-  //底部导航栏
+  //底部导航栏，定义数组
   var mainTitles = ['首页', '发现','其他', '我的'];
   var indexStack;
   List<BottomNavigationBarItem> navigationViews;
+  //
   final navigatorKey = GlobalKey<NavigatorState>();
+  final String TAG = "AppMainPage-----";
 
+  //在构建页面时，会调用组件的build方法
+  //widget的主要工作是提供一个build()方法来描述如何构建UI界面
+  //通常是通过组合、拼装其它基础widget
   //重写该方法，初始化作用
   @override
   Widget build(BuildContext context) {
@@ -81,29 +89,40 @@ class MainDartState extends State<AndroidMain> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     initNavigationBarView();
-    LogUtils.showPrint('initState');
+    LogUtils.showPrint(TAG+'initState');
   }
 
   @override
   void didChangeDependencies() {
-    LogUtils.showPrint('didChangeDependencies');
+    LogUtils.showPrint(TAG+'didChangeDependencies');
     super.didChangeDependencies();
   }
 
   @override
   void deactivate() {
-    LogUtils.showPrint('deactivate');
+    LogUtils.showPrint(TAG+'deactivate');
     super.deactivate();
   }
 
   @override
   void dispose() {
-    LogUtils.showPrint('dispose');
+    LogUtils.showPrint(TAG+'dispose');
     super.dispose();
+  }
+
+  void _initCounter() {
+    //setState方法的作用是通知Flutter框架，有状态发生了改变，Flutter框架收到通知后，
+    //会执行build方法来根据新的状态重新构建界面， Flutter 对此方法做了优化，
+    //使重新执行变的很快，所以你可以重新构建任何需要更新的东西，而无需分别去修改各个widget。
+    setState(() {
+      _counter++;
+      LogUtils.showPrint(TAG+'setState');
+    });
   }
 
   ///初始化数据
   void initData() {
+    LogUtils.showPrint(TAG+'initData');
     indexStack = new IndexedStack(
       children: <Widget>[new HomePage(), new FindPage(),new TodoPage(), new MePage()],
       index: positionIndex,
@@ -161,7 +180,7 @@ class MainDartState extends State<AndroidMain> with TickerProviderStateMixin {
         padding: EdgeInsets.zero,
         children: <Widget>[
           new UserAccountsDrawerHeader(
-            accountName: Text("杨充"),
+            accountName: Text("杨充"+_counter.toString()),
             accountEmail: Text("yangchong211@163.com"),
             onDetailsPressed: (){
               navigatorKey.currentState.push(new MaterialPageRoute(builder: (context) {
@@ -234,6 +253,7 @@ class MainDartState extends State<AndroidMain> with TickerProviderStateMixin {
                 /*Navigator.of(context).push(new MaterialPageRoute(builder: (context){
                   return new SettingPage();
                 }));*/
+                _initCounter();
                 //关闭侧滑菜单
                 navigatorKey.currentState.push(new MaterialPageRoute(builder: (context) {
                   return new SettingPage();
