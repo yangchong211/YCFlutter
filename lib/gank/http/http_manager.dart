@@ -61,7 +61,7 @@ class HttpManager{
     Options option = new Options();
     option.headers = headers;
     option.method = getHttpMethod(method);
-    option.connectTimeout = 15000;
+    //option.connectTimeout = 15000;
     option.receiveTimeout = 15000;
 
     ///dio request

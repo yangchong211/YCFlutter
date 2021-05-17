@@ -21,8 +21,8 @@ dependencies:
   build_runner: "^1.0.0"
   json_model: "^0.0.2"
   pull_to_refresh: "^1.4.0"
-  dio: "^2.1.6"
-  cached_network_image: "^0.8.0"
+  dio: "^3.0.9"
+  cached_network_image: "^2.5.1"
 
 
 dev_dependencies:
