@@ -61,9 +61,9 @@ class _LifecycleAppPageState extends State<LifecycleAppPage>
       case AppLifecycleState.resumed:
         LogUtils.showPrint('AppLifecycleState.resumed');
         break;
-      case AppLifecycleState.suspending:
-        LogUtils.showPrint('AppLifecycleState.suspending');
-        break;
+      // case AppLifecycleState.suspending:
+      //   LogUtils.showPrint('AppLifecycleState.suspending');
+      //   break;
     }
 
     super.didChangeAppLifecycleState(state);
