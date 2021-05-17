@@ -31,5 +31,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <!--Your Flutter application is created using an older version of the Android embedding.
+        It's being deprecated in favor of Android embedding v2.-->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" >
+        </meta-data>
     </application>
 </manifest>
