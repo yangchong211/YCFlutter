@@ -19,7 +19,7 @@ import 'package:ycflutter/android/api/AndroidApi.dart';
 import 'package:ycflutter/android/api/HttpUtils.dart';
 import 'package:ycflutter/common/Constants.dart';
 import 'package:ycflutter/android/pages/detail/ArticleDetailPage.dart';
-import 'package:ycflutter/android/pages/me/LoginPage.dart';
+import 'package:ycflutter/page/me/LoginPage.dart';
 import 'package:ycflutter/utils/UserUtils.dart';
 import 'package:ycflutter/android/weight/EndLine.dart';
 

@@ -15,16 +15,15 @@ limitations under the License.
 */
 
 import 'package:flutter/material.dart';
-import 'package:ycflutter/android/pages/me/AboutMePage.dart';
-import 'package:ycflutter/android/pages/me/SettingPage.dart';
+import 'package:ycflutter/page/me/AboutMePage.dart';
+import 'package:ycflutter/page/me/SettingPage.dart';
 import 'package:ycflutter/android/weight/SmartDrawer.dart';
 import 'package:ycflutter/common/Constants.dart';
 import 'package:ycflutter/android/pages/find/FindPage.dart';
 import 'package:ycflutter/android/pages/home/HomePage.dart';
-import 'package:ycflutter/android/pages/me/MePage.dart';
+import 'package:ycflutter/page/me/MePage.dart';
 import 'package:ycflutter/android/pages/search/SearchPage.dart';
 import 'package:ycflutter/android/pages/todo/TodoPage.dart';
-import 'package:ycflutter/gank/page/gank_main.dart';
 import 'package:ycflutter/res/YcColors.dart';
 import 'package:ycflutter/utils/EventBus.dart';
 import 'package:ycflutter/utils/LogUtils.dart';
@@ -143,7 +142,7 @@ class MainDartState extends State<AppMainPage> with TickerProviderStateMixin {
             icon: new Icon(Icons.account_balance),
             onPressed: () {
               navigatorKey.currentState.push(new MaterialPageRoute(builder: (context) {
-                return new GankMain();
+                return new SearchPage(null);
               }));
             }),
         new IconButton(

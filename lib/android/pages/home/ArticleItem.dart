@@ -18,7 +18,7 @@ import 'package:flutter/material.dart';
 import 'package:ycflutter/android/api/AndroidApi.dart';
 import 'package:ycflutter/android/api/HttpUtils.dart';
 import 'package:ycflutter/android/pages/detail/ArticleDetailPage.dart';
-import 'package:ycflutter/android/pages/me/LoginPage.dart';
+import 'package:ycflutter/page/me/LoginPage.dart';
 import 'package:ycflutter/res/YcColors.dart';
 import 'package:ycflutter/utils/string_utils.dart';
 import 'package:ycflutter/utils/UserUtils.dart';

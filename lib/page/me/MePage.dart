@@ -15,12 +15,12 @@ limitations under the License.
 */
 import 'package:flutter/material.dart';
 import 'package:ycflutter/android/pages/detail/ArticleDetailPage.dart';
-import 'package:ycflutter/android/pages/me/AboutMePage.dart';
-import 'package:ycflutter/android/pages/me/MeCollectPage.dart';
-import 'package:ycflutter/android/pages/me/LoginPage.dart';
-import 'package:ycflutter/android/pages/me/SettingPage.dart';
+import 'package:ycflutter/page/me/AboutMePage.dart';
+import 'package:ycflutter/page/me/MeCollectPage.dart';
+import 'package:ycflutter/page/me/LoginPage.dart';
+import 'package:ycflutter/page/me/SettingPage.dart';
 import 'package:ycflutter/res/YcColors.dart';
-import 'package:ycflutter/utils/AppNavigator.dart';
+import 'package:ycflutter/router/app_navigator.dart';
 import 'package:ycflutter/utils/UserUtils.dart';
 import 'package:ycflutter/android/weight/ItemLine.dart';
 

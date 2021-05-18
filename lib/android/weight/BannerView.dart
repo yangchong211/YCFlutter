@@ -15,7 +15,7 @@ limitations under the License.
 */
 import 'package:flutter/material.dart';
 import 'package:ycflutter/android/pages/detail/ArticleDetailPage.dart';
-import 'package:ycflutter/utils/AppNavigator.dart';
+import 'package:ycflutter/router/app_navigator.dart';
 
 
 /*

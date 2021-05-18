@@ -29,7 +29,8 @@ import 'package:ycflutter/page/app_main_page.dart';
 //void main() => runApp(MainDart());
 
 void main(){
-  //应用入口
+  // 应用入口
+  // AppMainPage()是Flutter应用的根组件。
   runApp(new AppMainPage());
 }
 
