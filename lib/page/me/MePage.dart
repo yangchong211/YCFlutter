@@ -137,7 +137,10 @@ class MeState extends State<MePage> {
         title: const Text('开始登陆'),
         trailing:  Icon(Icons.arrow_forward, color: YcColors.colorPrimary),
         onTap: () {
-          Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
+          // Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
+          //   return new LoginPage();
+          // }));
+          Navigator.push(context, new MaterialPageRoute(builder: (context) {
             return new LoginPage();
           }));
         });
@@ -180,9 +183,7 @@ class MeState extends State<MePage> {
               print('没有登陆');
             } else {
               //已经登陆
-              Navigator.of(context).push(new MaterialPageRoute(builder: (context) {
-                return new CollectPage();
-              }));
+              AppNavigator.push(context, CollectPage());
             }
           });
         });

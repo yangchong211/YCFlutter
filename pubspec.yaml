@@ -1,11 +1,14 @@
+# name：应用或包名称。
 name: ycflutter
+# description: 应用或包的描述、简介。
 description: A new Flutter application.
-
+# version：应用或包的版本号。
 version: 1.0.0+1
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
 
+# dependencies：应用或包依赖的其它包或插件。
 dependencies:
   flutter:
     sdk: flutter
@@ -24,12 +27,12 @@ dependencies:
   dio: "^3.0.9"
   cached_network_image: "^2.5.1"
 
-
+# dev_dependencies：开发环境依赖的工具包（而不是flutter应用本身依赖的包）。
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
+# flutter：flutter相关的配置选项。
 flutter:
   uses-material-design: true
   assets:
