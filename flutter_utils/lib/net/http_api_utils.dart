@@ -21,15 +21,7 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'package:yc_flutter_utils/net/http_request.dart';
 
-/*
- * <pre>
- *     @author yangchong
- *     blog  : https://github.com/yangchong211
- *     time  : 2018/9/12
- *     desc  : 网络请求工具类
- *     revise:
- * </pre>
- */
+///网络请求工具类
 class HttpUtils{
 
   static const String GET = "get";
