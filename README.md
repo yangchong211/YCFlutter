@@ -1,169 +1,359 @@
-# flutter学习案例
+# YCHybridFlutter
+## Android和flutter混合开发案例
+
 #### 目录介绍
-- 00.项目下载与查看
-- 01.项目介绍
-- 02.项目优势
-- 03.部分功能介绍
-- 04.部分截图展示
-- 05.版本更新
-- 06.flutter系列博客
-- 07.感谢
-- 08.如何辨别flutter与原生
-- 09.关于更多
+- 01.创建项目
+- 02.运行项目
+- 03.Android跳转flutter
+- 04.flutter跳转Android
+- 05.泛型和回调处理
+- 06.返回键问题
+- 07.通信Channel介绍
+- 08.混合开发优劣
+- 09.遇到的问题汇总
 
 
 
-### 00.项目下载与查看
-#### 0.1 下载apk
-- 已经打包好的apk存放到项目根目录apk文件夹下，可以直接下载安装。建议先安装看看效果！
-- [apk下载地址](https://github.com/yangchong211/ycflutter/tree/master/apk)
+### 00.前言介绍
+- 关于该flutter和Android混合开发案例apk
+    - [下载apk](https://github.com/yangchong211/YCHybridFlutter/tree/master/YCAndroid/apk)
+- 项目截图展示
+    - ![image](https://github.com/yangchong211/YCHybridFlutter/blob/master/YCAndroid/image/1.jpg)
+    - ![image](https://github.com/yangchong211/YCHybridFlutter/blob/master/YCAndroid/image/2.jpg)
+- 关于flutter项目推荐
+    - flutter学习案例，接口使用玩Android开放的api，作为入门训练代码案例，耗时大概4个月【业余时间】，已经完成了基本的功能。努力打造一个体验好的flutter版本的玩android客户端！
+    - 项目地址：https://github.com/yangchong211/ycflutter
 
 
-#### 0.2 项目
-- 关于项目的工程大概介绍
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/0.png)
-
-
-#### 0.3 案例演示
-- 努力打造一款flutter极致体验的WanAndroid客户端，暂时我也是学习阶段，后期慢慢更新！
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/flutter.gif)
-
-#### 0.4 项目测试账号和密码
-- 接口是接用wanAndroid开放的接口，感谢鸿洋大神提供免费的开源接口。只是用于训练flutter案例，请勿商用。如需商用，请直接联系鸿洋大神623565791！
-- 测试账号：用户名:yangchong     密码：123456
-
-
-### 01.项目介绍
-#### 1.1 运行项目
-- 首先配置好Flutter开发环境，可参阅flutter中文社区的配置流程。
-- 下载代码，执行Packages get安装第三方包，直接执行main.dart代码running即可
-- 经过测试，发现android studio、XCode、IDEA都是可以的
-
-
-### 02.项目优势
-- flutter目前开源的项目相对不多，虽然已经拥有GSYGithubAppFlutter开源项目，还别说入门还是稍微有点难度。该项目作为入门级学习还是可以的，等到比较熟悉flutter，看看那个项目还是十分不错的。
-- 项目结构清晰，代码注释详细，可以一边看博客学习dart语言，一边训练写代码，一边总结记录问题。
-
-
-### 03.部分功能介绍
-#### 3.1 基础功能
-- 首页轮播图+list：推荐最新的博客
-- 知识体系：对安卓知识体系做整理
-- 登录注册：登录、注册、Cookie持久化
-- 我的收藏页面：依靠Cookie持久化，实现对文章的收藏和展示
-- 项目分类：在WanAndroid上发布的项目
-- 网址导航：展示常用的开发网站
-- 搜索功能：输入搜索、搜索推荐、历史搜索等等
-- 关于我们：鸿洋wanAndroid介绍
-
-
-#### 3.2 后期完善功能
-- 轮播图后期需要自动轮播【暂时还不知道如何实现自动轮播】，文章可以分享功能
-- 添加缓存功能，学习flutter中数据库该怎么用
-
-
-### 04.部分截图展示
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/16.jpg)
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/17.jpg)
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/1.jpg)
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/2.jpg)
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/3.jpg)
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/4.jpg)
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/5.jpg)
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/15.jpg)
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/6.jpg)
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/7.jpg)
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/8.jpg)
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/9.jpg)
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/10.jpg)
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/11.jpg)
-
-
-### 05.版本更新
-- v1.0.0 更新于2018年8月到12月18日
-    - 断断续续利用每天闲暇时间边学习边写flutter代码，初步完善了玩Android基本的一些功能
-- v1.1.0 更新于2019年5月27日
-    - 添加了侧滑菜单，同时自定义侧滑菜单可以设置宽度，优化了首页的代码结构，添加了首页点击悬浮按钮回到顶部
-    - 添加了上拉加载更多时候，显示加载loading，以及没有更多数据时，显示没有更多数据widget控件
-    - 完善搜索页面标签流式布局的功能，同时网络请求过程中显示加载loading，结束后展示布局
-- v1.1.1 更新于2019年6月2日
-    - 修改
+### 01.创建项目
+#### 1.1 错误创建方法
+- 注意不是Android的根目录下，注意不是Android的根目录下，注意不是Android的根目录下。这里地方以前卡了我好长时间，切记！
 
 
 
-### 06.flutter系列博客
-- 待更新
+#### 1.2 正确姿势创建
+- 应该是下图的目录结构。flutter_hybrid目录即为我们要创建的flutter项目，YCAndroid是我们现有的Android项目，叫什么都好。可以像我这样，建立一个空文件夹，把现有Android项目拖进去，这样方便查找和管理，不然flutter_hybrid会和YCAndroid平级，在一大堆项目中找这两个也怪麻烦的。
+    - ![image](https://upload-images.jianshu.io/upload_images/4432347-17e1814402c872a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+- 通过命令行创建
+    - flutter create -t module flutter_lib
 
 
-### 07.感谢
-#### 7.1 关于接口
-- 接口用wanAndroid开放接口，在Android这个圈子，貌似我认识的程序员都知道张鸿洋大神。可以说该接口用于业余训练项目十分不错！
-- 想要了解更多，可以查看鸿洋大神的wanAndroid网站：http://www.wanandroid.com/index
-
-
-#### 7.2 参考案例和学习博客
-- 国外大神分享的一些好的demo：https://github.com/iampawan/FlutterExampleApps
-- 中国flutter中文网站：https://flutterchina.club/
-- 网络开源好项目：https://github.com/AweiLoveAndroid/Flutter-learning
-- flutter官方案例：https://github.com/flutter/flutter
-- 鸿洋玩Android：http://www.wanandroid.com/index
-
-
-
-### 08.如何辨别flutter与原生
-- 简单辨认一个页面是Flutter还是原生
-    - 打开手机的“开发者模式”
-    - 打开“显示布局边界”
-    - 切回APP，然后看看app中的UI效果
-- ![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/12.jpg)
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/13.jpg)
-![image](https://github.com/yangchong211/ycflutter/blob/master/iamge/14.jpg)
-
-
-
-### 其他操作
-- 输入flutter doctor -v  该命令检查您的环境并在终端窗口中显示报告
+#### 1.3 本地依赖
+- 在Android中本地依赖方式为：
+    - 对于Android的本地依赖，主要是由include_flutter.groovy和flutter.gradle这两个脚本负责Flutter的本地依赖和产物构建
+        - 在settings.gradle中注入include_flutter.groovy脚本
+        - 在需要依赖的module中build.gradle添加project(':flutter')依赖
+    - 代码如下所示
+        ```
+        include ':app'
+        //网上好多博客是这样写的，注意有可能会出现坑，在1.3中会说到
+        setBinding(new Binding([gradle: this]))                                 // new
+        evaluate(new File(                                                      // new
+                settingsDir.parentFile,                                               // new
+                'flutter_lib/.android/include_flutter.groovy'                          // new
+        ))                                                                      // new
+        ```
+- 然后再Android原生项目中的app中的build.gradle文件中添加依赖库
+    - implementation project(':flutter')
+- 然后就可以看到项目结构如下所示
+    - ![image](https://upload-images.jianshu.io/upload_images/4432347-19d141353143df95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 
-### 报错提示
+#### 1.4 注意1.3可能遇到问题
+- Android 开发者很容易误以为集成 Flutter Module 就像以前 Android 工程集成 Module一样，所以按照这种思路，执行依赖 Sync 的时候就会出现 include_flutter.groovy 相关文件丢失问题。
+- 解决这种问题两种思路，第一种情况，本质就是你的配置错了，官方 wiki 让你将 flutter_module 放在 Android 工程的同级目录下，而不是 Android 工程目录下。想一下这种问题为什么会出现，主要就是一些不好的文章翻译不正确导致的问题。
+- 注意如果你的项目中buildTypes有release，preview，debug……等等，需要在添加下面代码
+    ```
+    buildTypes {
+        release {
+
+        }
+        preview {
+            //关键代码，release， debug为library中已有buildType
+            matchingFallbacks = ['release', 'debug']
+        }
+        debug {
+
+        }
+    }
+    ```
+
+
+### 02.运行项目
+- 下载该demo后，可以直接打开YCAndroid项目编辑原生部分代码，可以打开flutter_lib项目编辑flutter部分代码
+
+
+### 03.Android跳转flutter
+#### 3.1 原生跳转flutter页面【Native端 调用 Flutter端】
+- Android原生跳转代码
+    ```
+    flutterViewAbout = Flutter.createView(
+            MainActivity.this,
+            getLifecycle(),
+            "yc"
+    );
+    FrameLayout.LayoutParams layout = new FrameLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
+    layout.leftMargin = 0;
+    layout.topMargin = 0;
+    addContentView(flutterViewAbout, layout);
+    ```
+- flutter接收并处理代码
+    ```
+    class MyApp extends StatelessWidget {
+      // This widget is the root of your application.
+      @override
+      Widget build(BuildContext context) {
+        return MaterialApp(
+          title: 'flutter和Android混编项目',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home:  _widgetForRoute(window.defaultRouteName),
+        );
+      }
+    }
+
+
+    Widget _widgetForRoute(String route) {
+      switch (route) {
+        case 'yc_route':
+          return  MyHomePage(title: '匹配到了，这个是flutter页面');
+        case 'yc':
+          //接收到了匹配的规则，跳转到flutter指定页面
+          return AboutMePage();
+        default:
+          return  MyHomePage(title: '没有匹配到，查看route是否一致');
+      }
+    }
+    ```
+
+#### 3.2 从Android这边传递数据到flutter【Native端 调用 Flutter端】
+- Android原生传递参数代码
+    ```
+    new EventChannel(flutterView, ANDROID_TO_FLUTTER_CHANNEL)
+            .setStreamHandler(new EventChannel.StreamHandler() {
+                @Override
+                public void onListen(Object o, EventChannel.EventSink eventSink) {
+                    String android = "逗比，来自android原生的参数";
+                    eventSink.success(android);
+                }
+
+                @Override
+                public void onCancel(Object o) {
+
+                }
+            });
+    ```
+- flutter接收参数的代码
+    ```
+      var _nativeParams;
+
+      @override
+      void initState() {
+        super.initState();
+        // Flutter接收原生发送的参数
+        // 开启监听
+        _startFromAndroidPlugin();
+      }
+
+      @override
+      void dispose() {
+        super.dispose();
+        // Flutter接收原生发送的参数
+        // 取消监听
+        if(_fromAndroidSub != null){
+          _fromAndroidSub.cancel();
+        }
+      }
+
+      // Flutter接收原生发送的参数开启监听
+      // 从Android原生项目接收传递的参数
+      void _startFromAndroidPlugin(){
+        if(_fromAndroidSub == null){
+          _fromAndroidSub =  fromAndroidPlugin.receiveBroadcastStream()
+              .listen(_onFromAndroidEvent,onError: _onFromAndroidError);
+        }
+      }
+
+
+      void _onFromAndroidEvent(Object event) {
+        setState(() {
+          _nativeParams = event;
+        });
+      }
+
+      //接收失败
+      void _onFromAndroidError(Object error) {
+        setState(() {
+          _nativeParams = "error";
+          print(error);
+        });
+      }
+    ```
+
+
+### 04.flutter跳转Android
+#### 4.1 跳转到原生界面，不带参数【Flutter端 调用 Native端】
+- flutter跳转代码
+    ```
+    static const toAndroidPlugin = const MethodChannel('com.ycbjie.toandroid/plugin');
+
+    Future<Null> _jumpToNative() async {
+        String result = await toAndroidPlugin.invokeMethod('doubi');
+        print(result);
+    }
+    ```
+- Android接收并处理代码
+    ```
+    new MethodChannel(flutterView, "com.ycbjie.toandroid/plugin")
+            .setMethodCallHandler(new MethodChannel.MethodCallHandler() {
+        @Override
+        public void onMethodCall(MethodCall methodCall, MethodChannel.Result result) {
+            if ("doubi".equals(methodCall.method)) {
+                //接收来自flutter的指令
+                //跳转到指定Activity
+                Intent intent = new Intent(MainActivity.this, DouBiActivity.class);
+                startActivity(intent);
+                //返回给flutter的参数
+                result.success("success");
+            } else if ("android".equals(methodCall.method)) {
+                //接收来自flutter的指令
+                //解析参数
+                Object text = methodCall.argument("flutter");
+                if (text instanceof String){
+                    //带参数跳转到指定Activity
+                    Intent intent = new Intent(MainActivity.this, AndroidFirstActivity.class);
+                    intent.putExtra("yc", (String) text);
+                    startActivity(intent);
+                }else if (text instanceof List){
+                    Intent intent = new Intent(MainActivity.this, AndroidSecondActivity.class);
+                    intent.putStringArrayListExtra("yc", (ArrayList<String>) text);
+                    startActivity(intent);
+                }
+                //返回给flutter的参数
+                result.success("success");
+            } else {
+                result.notImplemented();
+            }
+        }
+    });
+    ```
+
+
+
+#### 4.2 跳转到原生界面，带参数【Flutter端 调用 Native端】
+- flutter跳转代码
+    ```
+    static const toAndroidPlugin = const MethodChannel('com.ycbjie.toandroid/plugin');
+
+    Future<Null> _jumpToNativeWithParams1() async {
+        Map<String, String> map = { "flutter": "这是一条来自flutter的参数" };
+        String result = await toAndroidPlugin.invokeMethod('android', map);
+        print(result);
+    }
+    ```
+- Android接收并处理代码
+    - 同4.1处理逻辑
+
+
+### 07.通信Channel介绍
+#### 7.1 两端通信Flutter Platform Channel的使用
+    - Flutter提供 MethodChannel、EventChannel、BasicMessageChannel 三种方式
+    - 类似注册监听，发送的模式原则。使用顺序：先注册，后发送，否则接收不到。尤其使用 MethodChannel、EventChannel 不符合该原则会抛出异常，BasicMessageChannel方式只是收不到消息
+
+
+#### 7.2 第一种方式MethodChannel
+- MethodChannel使用代码
+    - 可以直接看4.1代码
+
+#### 7.3 第二种方式EventChannel
+- EventChannel使用代码
+    - 可以直接看3.2代码
+
+
+#### 7.4 第三种方式BasicMessageChannel【应用场景：以前两种都不一样，互相调用】
+- 在Android原生代码中
+    ```
+    /**
+     * 应用场景：以前两种都不一样，互相调用
+     */
+    private void createBasicMessageChannel() {
+        BasicMessageChannel<String> channel = new BasicMessageChannel<>(flutterView,
+                ANDROID_AND_FLUTTER_CHANNEL, StringCodec.INSTANCE);
+        //发送消息
+        channel.send("逗比，互相调用场景：我是Native发送的消息");
+        //接收消息
+        channel.setMessageHandler(new BasicMessageChannel.MessageHandler<String>() {
+            @Override
+            public void onMessage(String s, BasicMessageChannel.Reply<String> reply) {
+                reply.reply("It is reply from native");
+                Log.e("BasicMessageChannel",s);
+                Log.e("BasicMessageChannel",reply.toString());
+                Intent intent = new Intent(MainActivity.this, AndroidFirstActivity.class);
+                intent.putExtra("yc", s);
+                startActivity(intent);
+            }
+        });
+    }
+    ```
+- 在flutter代码中
+    ```
+    static const ycPlugin = const BasicMessageChannel('com.ycbjie.androidAndFlutter/plugin',StringCodec());
+    
+    //BasicMessageChannel互相调用，接收消息
+    ycPlugin.setMessageHandler((str){
+      _nativeParams2 = str;
+    });
+    
+    // 发送消息
+    ycPlugin.send("点击回掉信息");
+    ```
+- 测试结果
+    - 在Android原生代码中发送消息，flutter接收失败。后期再深入研究通信机制
+    - 在flutter代码中回调信息，Android原生代码接收消息成功
+
+
+
+#### 7.5 注意要点如下所示
+- 第一点：方法名称
+    - com.ycbjie.toandroid/plugin，可以不采取包名，对应一致即可，不同的方式最好不要重复
+- 第二点：关于消息编解码器
+    - StandardMethodCodec()非必传，默认是StandardMethodCodec.INSTANCE。
+    - 对于 MethodChannel 和 EventChannel 两种方式，有两种编解码器，均实现自MethodCodec ，分别为 StandardMethodCodec 和 JsonMethodCodec。
+    - 对于 BasicMessageChannel 方式，有四种编解码器，均实现自MessageCodec ，分别为 StandardMessageCodec、JSONMessageCodec、StringCodec和BinaryCodec。
+- 第三点：关于监听方式
+    - MethodChannel - setMethodCallHandler()
+    - EventChannel - setStreamHandler()
+    - BasicMessageChannel - setMessageHandler()
+
+
+
+
+### 08.混合开发优劣
+#### 8.1 混合开发必备条件
+- 因工程结构的差异，如果基于现有的Native工程想使用Flutter来开发其中一个功能模块，一般来说混合开发至少得保证如下特点：
+    - 对Native工程无侵入
+    - 对Native工程零耦合，可以先写一些简单的页面练练手
+    - 不影响Native工程的开发流程与打包流程
+    - 易本地调试
+
+
+#### 8.2 可能造成的影响
+- 官方提供了一种Flutter本地依赖到现有Native的方案，不过这种方案不加改变优化而直接依赖的话，则会直接影响了其它无Flutter环境的开发同事的开发，影响开发流程，且打包平台也不支持这种依赖方式的打包
+
+
+#### 8.3 集成方案对比【图片摘自网络】
+- ![image](https://upload-images.jianshu.io/upload_images/4432347-d537ae7130636c7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
+### 09.遇到的问题汇总
+#### 9.1 打开项目，项目的settings.gradle 文件报红
 - 报错如下所示
-    - 重点错误日志：Some Android licenses not accepted.  To resolve this, run: flutter doctor --android-licenses
-    - 解决办法：flutter doctor --android-licenses   多输几次 y即可
+    - ![image](https://upload-images.jianshu.io/upload_images/4432347-c14425a90970007d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
-
-### 09.关于更多
-#### 关于博客汇总链接
-- 1.[技术博客汇总](https://www.jianshu.com/p/614cb839182c)
-- 2.[开源项目汇总](https://blog.csdn.net/m0_37700275/article/details/80863574)
-- 3.[生活博客汇总](https://blog.csdn.net/m0_37700275/article/details/79832978)
-- 4.[喜马拉雅音频汇总](https://www.jianshu.com/p/f665de16d1eb)
-- 5.[其他汇总](https://www.jianshu.com/p/53017c3fc75d)
-
-
-#### 其他推荐
-- 博客笔记大汇总【15年10月到至今】，包括Java基础及深入知识点，Android技术博客，Python学习笔记等等，还包括平时开发中遇到的bug汇总，当然也在工作之余收集了大量的面试题，长期更新维护并且修正，持续完善……开源的文件是markdown格式的！同时也开源了生活博客，从12年起，积累共计47篇[近20万字]，转载请注明出处，谢谢！
-- 链接地址：https://github.com/yangchong211/YCBlogs
-- 如果觉得好，可以star一下，谢谢！当然也欢迎提出建议，万事起于忽微，量变引起质变！
-
-
-#### 关于LICENSE
-```
-Copyright 2017 yangchong211（github.com/yangchong211）
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-```
 
 
 
