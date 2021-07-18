@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:yc_flutter_tool/page/event/bus/event_bus_page.dart';
+import 'package:yc_flutter_tool/page/event/gesture_recognizer_page.dart';
 import 'package:yc_flutter_tool/page/event/pointer_event_page.dart';
 import 'package:yc_flutter_tool/page/event/gesture_detector_page.dart';
 import 'package:yc_flutter_tool/page/event/provider/business_pattern.dart';
@@ -28,10 +29,10 @@ class EventState extends State<EventPage>{
   @override
   void initState() {
     super.initState();
-    if(_patternService==null){
-      _patternService =  serviceLocator<BusinessPatternService>();
-    }
-    _patternService.nonePattern();
+    // if(_patternService==null){
+    //   _patternService =  serviceLocator<BusinessPatternService>();
+    // }
+    // _patternService.nonePattern();
   }
 
   @override
@@ -45,7 +46,8 @@ class EventState extends State<EventPage>{
         child: new ListView(
           children: [
             CustomRaisedButton(new PointerEventPage(), "原始指针事件处理"),
-            CustomRaisedButton(new GestureDetectorPage(), "手势识别"),
+            CustomRaisedButton(new GestureDetectorPage(), "手势识别-GestureDetector"),
+            CustomRaisedButton(new GestureRecognizerPage(), "手势识别-GestureRecognizer"),
             CustomRaisedButton(new EventBusPage(), "事件总线"),
             CustomRaisedButton(new ProviderStatePage(), "Provider状态事件"),
 

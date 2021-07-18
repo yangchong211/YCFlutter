@@ -19,11 +19,16 @@ dependencies:
   # 添加sharedPreference依赖
   shared_preferences: ^0.5.1
   # 添加文件依赖
-  path_provider: ^0.5.0
+  path_provider: ^0.0.5
   #添加Sqflite依赖
   sqflite: ^1.0.0
 #  cupertino_icons: ^1.0.2
-
+#  yc_flutter_utils:
+#    version: 0.0.1
+#    hosted:
+#      name: flutter_utils
+#      url: ''
+#    path: ../flutter_utils
 
 dev_dependencies:
   flutter_test:
